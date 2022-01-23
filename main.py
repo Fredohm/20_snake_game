@@ -5,17 +5,21 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 
-# Create a snake body
-snake = []
 
-x_pos = 0.0
-for _ in range(3):
-    turtle = Turtle(shape="square")
-    turtle.color("white")
-    turtle.penup()
-    turtle.setx(x_pos)
-    x_pos += -20.0
-    snake.append(turtle)
+# Create a snake body
+def create_snake():
+    segments = []
+
+    x_pos = 0.0
+    for _ in range(3):
+        new_segment = Turtle(shape="square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.setx(x_pos)
+        x_pos += -20.0
+        segments.append(new_segment)
+        return segments
+
 
 # Move the snake
 
@@ -28,5 +32,9 @@ for _ in range(3):
 # Detect collision with a wall
 
 # Detect collision with the tail of the snake
+
+# game on
+
+
 
 screen.exitonclick()
