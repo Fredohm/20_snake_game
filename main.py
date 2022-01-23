@@ -1,9 +1,12 @@
 # Snake game
 from turtle import Turtle, Screen
+import time
+
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
+screen.tracer(0)
 
 
 # Create a snake body
@@ -18,7 +21,7 @@ def create_snake():
         new_segment.setx(x_pos)
         x_pos += -20.0
         segments.append(new_segment)
-        return segments
+    return segments
 
 
 # Move the snake
@@ -34,7 +37,13 @@ def create_snake():
 # Detect collision with the tail of the snake
 
 # game on
-
+game_is_on = True
+snake = create_snake()
+while game_is_on:
+    screen.update()
+    time.sleep(0.2)
+    for segment in snake:
+        segment.forward(10)
 
 
 screen.exitonclick()
