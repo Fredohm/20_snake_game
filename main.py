@@ -1,5 +1,9 @@
 # Snake game
 from turtle import Turtle, Screen
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("Snake Game")
 
 # Create a snake body
 
@@ -15,3 +19,4 @@ from turtle import Turtle, Screen
 
 # Detect collision with the tail of the snake
 
+screen.exitonclick()
