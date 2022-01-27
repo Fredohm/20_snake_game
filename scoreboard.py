@@ -31,5 +31,5 @@ class Scoreboard(Turtle):
 
     def game_over(self):
         self.setposition(0.0, 0.0)
+        self.pencolor("black")
         self.write("GAME OVER", align=ALIGNMENT, font=FONT)
-
